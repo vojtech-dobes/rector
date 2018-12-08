@@ -40,8 +40,8 @@ final class ConfigurationFactory
             $category,
             $this->resolveFullyQualifiedNodeTypes($config['node_types']),
             $config['description'],
-            $config['code_before'],
-            $config['code_after'],
+            ltrim($config['code_before'], '<?php'),
+            ltrim($config['code_after'], '<?php'),
             array_filter((array) $config['source']),
             $this->resolveLevelConfig($config['level'])
         );
